@@ -23,9 +23,69 @@ const N8 = document.querySelector('#N8');
 
 //BUTTONS
 const canc = document.getElementById('canc');
+const play = document.getElementById['play'];
+const pause = document.getElementById('pause');
+
+//SAMPLES 
+
+
+const Sa1 = {
+  name:'cowbell-808',
+  sample: document.getElementById('SA-1'),
+  id:1
+}
+const Sa2 = {
+  name:'hihat-808',
+  sample: document.getElementById('SA-2'),
+  id:2
+}
+const Sa3 = {
+  name:'hihat-digital',
+  sample:document.getElementById('SA-3'),
+  id:3
+}
+const Sa4 = {
+  name:'kick-cultivator',
+  sample:document.getElementById('SA-4'),
+  id:4
+}
+const Sa5 = {
+  name:'kick-dry',
+  sample:document.getElementById('SA-5'),
+  id:5
+}
+const Sa6 = {
+  name:'kick-electro',
+  sample:document.getElementById('SA-6'),
+  id:6
+}
+const Sa7 = {
+  name:'openhat-808',
+  sample:document.getElementById('SA-7'),
+  id:7
+}
+const Sa8 = {
+  name:'openhat-acoustic',
+  sample:document.getElementById('SA-8'),
+  id:8
+}
+const Sa9 ={
+  name:'openhat-tight',
+  sample:document.getElementById('SA-9'),
+  id:9
+}
+let sampleSel= document.getElementById('sampleSel')
+let sampleArr = [Sa1,Sa2,Sa3,Sa4,Sa5,Sa6,Sa7,Sa7,Sa8];
+//create the options inside the selector
+let newOpt=''
+sampleArr.forEach((item, index) => {
+  document.getElementById('sampleSel').innerHTML+= `<option>${item.name}</option>`;
+
+})
+
 
 //sequencer arrays
-const sequencerArr = [N1,N2,N3,N4,N5,N6,N7,N8];
+const sequencerArr = [N1, N2, N3, N4, N5, N6, N7, N8];
 let sequencer = [];
 
 //Keydown for pad
@@ -37,37 +97,47 @@ function drum(e) {
   if (e.code === 'KeyQ') {
     console.log('Q!');
     Q.style.backgroundColor = '#f8d241';
+    Sa1.sample.play();
   } else if
     (e.code === 'KeyW') {
     console.log('W!');
     W.style.backgroundColor = '#f8d241';
+    Sa2.sample.play();
   } else if (e.code === 'KeyE') {
     console.log('E!');
     E.style.backgroundColor = '#f8d241';
+    Sa3.sample.play();
   } else if (e.code === 'KeyA') {
     console.log('A!');
     A.style.backgroundColor = '#f8d241';
+    Sa4.sample.play();
   } else if (e.code === 'KeyS') {
     console.log('S!');
     S.style.backgroundColor = '#f8d241';
+    Sa5.sample.play();
   } else if (e.code === 'KeyD') {
     console.log('D!');
     D.style.backgroundColor = '#f8d241';
+    Sa6.sample.play();
   } else if (e.code === 'KeyZ') {
     console.log('Y!');
     Y.style.backgroundColor = '#f8d241';
+    Sa7.sample.play();
   } else if (e.code === 'KeyX') {
     console.log('X!');
     X.style.backgroundColor = '#f8d241';
+    Sa8.sample.play();
   } else if (e.code === 'KeyC') {
     console.log('C!');
     C.style.backgroundColor = '#f8d241';
+    Sa9.sample.play();
+    
   }
 
 
-  
+
 }
-window.addEventListener('keyup',mach);
+window.addEventListener('keyup', mach);
 function mach(e) {
   e.preventDefault;
   console.log(e);
@@ -75,6 +145,7 @@ function mach(e) {
   if (e.code === 'KeyQ') {
     console.log('Q!');
     Q.style.backgroundColor = '#FFDB4A';
+
   } else if
     (e.code === 'KeyW') {
     console.log('W!');
@@ -105,36 +176,28 @@ function mach(e) {
 
 
 }
-//this part is going to stay on the top, with all the other sound -`library`
-
-// let bulletSound = document.createElement('audio');
-// bulletSound.src ='./sounds/bullet.wav';
-// bulletSound.setAttribute('controls','none');
-// bulletSound.setAttribute('preload','auto');
-// bulletSound.style.display = 'none';
-// bulletSound.volume = 0.1;
-// document.append(bulletSound);
 
 
-Q.addEventListener('click',addSequence);
-W.addEventListener('click',addSequence);
-E.addEventListener('click',addSequence);
-A.addEventListener('click',addSequence);
-S.addEventListener('click',addSequence);
-D.addEventListener('click',addSequence);
-Y.addEventListener('click',addSequence);
-X.addEventListener('click',addSequence);
-C.addEventListener('click',addSequence);
+
+Q.addEventListener('click', addSequence);
+W.addEventListener('click', addSequence);
+E.addEventListener('click', addSequence);
+A.addEventListener('click', addSequence);
+S.addEventListener('click', addSequence);
+D.addEventListener('click', addSequence);
+Y.addEventListener('click', addSequence);
+X.addEventListener('click', addSequence);
+C.addEventListener('click', addSequence);
 
 
-function addSequence(e){
-  if(sequencer.length < 8){
+function addSequence(e) {
+  if (sequencer.length < 8) {
     console.log(e.target.id)
-    sequencer.push(e.target.id) ;
+    sequencer.push(e.target.id);
     console.log(sequencer.length);
-    sequencerArr[sequencer.length-1].style.backgroundColor='#3298DC';
-    sequencerArr[sequencer.length-1].innerHTML= e.target.id;
-  
+    sequencerArr[sequencer.length - 1].style.backgroundColor = '#3298DC';
+    sequencerArr[sequencer.length - 1].innerHTML = e.target.id;
+
   }
 }
 
@@ -143,14 +206,17 @@ function addSequence(e){
 //cancel button. 
 canc.addEventListener('click', cancLast);
 
-function cancLast(e){
-  if (sequencer.length >= 1){
+function cancLast(e) {
+  if (sequencer.length >= 1) {
     e.preventDefault;
     sequencer.pop();
     // sequencer.pop();
-    sequencerArr[sequencer.length].style.backgroundColor='white';
-    sequencerArr[sequencer.length].innerHTML= sequencer.length+1;
+    sequencerArr[sequencer.length].style.backgroundColor = 'white';
+    sequencerArr[sequencer.length].innerHTML = sequencer.length + 1;
 
 
   }
 }
+
+//play button
+//pause button 

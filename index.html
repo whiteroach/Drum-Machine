@@ -39,34 +39,64 @@
             <button id='c' class="button is-warning is-centered is-large">C</button>
           </div>
         </div>
+        
         <div class="controller is-flex is-flex-direction-column is-justify-content-flex-end is-align-items-end ml-5">
-          <!--here controller-->
+          <!--BUTTONS-->
           <div class="buttons">
-            <button class="button is-link"><span class="icon is-small">
-                <i class="fas fa-play"></i>
-              </span></button>
+            <button id='play' class="button is-link"><span class="icon is-small">
+              <i class="fas fa-play"></i>
+            </span></button>
             <button id='canc' class="button is-black"><span class="icon is-small">
-                <i class="fas fa-undo"></i>
-              </span></button>
-            <button class="button is-danger">
+              <i class="fas fa-undo"></i>
+            </span></button>
+            <button id='pause' class="button is-danger">
               <span class="icon is-small">
                 <i class="fas fa-stop"></i>
               </span>
             </button>
-
-
+            
+            
           </div>
         </div>
       </div>
+      <!--SELECTOR-->
+       <div class="selector is-flex is-flex-direction-column"> 
+        <div class="field is-flex mr-5">
+          <div class="control">
+            <div class="select is-small">
+              <select>
+                <option>-</option>
+                <option>q</option>
+                <option>w</option>
+                <option>e</option>
+                <option>a</option>
+                <option>s</option>
+                <option>d</option>
+                <option>y</option>
+                <option>x</option>
+                <option>c</option>
+              </select>
+            </div>
+          </div>
+          <div class="control">
+            <div class="select is-small ml-4">
+              <select id='sampleSel'>
+                <option>Select Sample</option>
+              
+              </select>
+            </div>
+          </div>
+        </div>
+      </div> 
       <div class="columns ">
         <div class="column is-12 ">
-
-
+          
+          
           <p class="m-1">Sequencer</p>
-
+          
           <div
-            class="field has-addons is-flex buttons are-medium is-justify-content-center is-align-items-center is-flex-direction-row ">
-            <button class="button" id="N1">1</button>
+          class="field has-addons is-flex buttons are-medium is-justify-content-center is-align-items-center is-flex-direction-row ">
+          <button class="button" id="N1">1</button>
             <button class="button" id="N2">2</button>
             <button class="button" id="N3">3</button>
             <button class="button" id="N4">4</button>
@@ -78,6 +108,21 @@
         </div>
       </div>
     </div>
+
+  </div>
+  </div>
+
+  <!--Sound Library-->
+  <audio id='SA-1' src="./samples/cowbell-808.wav"></audio>
+  <audio id='SA-2' src="./samples/hihat-808.wav"></audio>
+  <audio id='SA-3' src="./samples/hihat-digital.wav"></audio>
+  <audio id='SA-4' src="./samples/kick-cultivator.wav"></audio>
+  <audio id='SA-5' src="./samples/kick-dry.wav"></audio>
+  <audio id='SA-6' src="./samples/kick-electro02.wav"></audio>
+  <audio id='SA-7' src="./samples/openhat-808.wav"></audio>
+  <audio id='SA-8' src="./samples/openhat-acoustic01.wav"></audio>
+  <audio id='SA-9' src="./samples/openhat-tight.wav"></audio>
+
 
   </div>
   <script src="app.js"></script>
