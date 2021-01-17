@@ -27,4 +27,8 @@ PS-900 Drum machine is a quick project did in my spare-time for exercise with DO
 
 ### Credit:
 
-All the sounds will come from freeSound.org, the page is styled using Bulma.
+All the sounds comes from 99sounds.org, the page is styled using Bulma.
+
+### link:
+
+https://99sounds.org/drum-samples/
