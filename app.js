@@ -30,56 +30,57 @@ const pause = document.getElementById('pause');
 
 
 const Sa1 = {
-  name:'cowbell-808',
+  name: 'cowbell-808',
   sample: document.getElementById('SA-1'),
-  id:1
+  id: 1
 }
 const Sa2 = {
-  name:'hihat-808',
+  name: 'hihat-808',
   sample: document.getElementById('SA-2'),
-  id:2
+  id: 2
 }
 const Sa3 = {
-  name:'hihat-digital',
-  sample:document.getElementById('SA-3'),
-  id:3
+  name: 'hihat-digital',
+  sample: document.getElementById('SA-3'),
+  id: 3
 }
 const Sa4 = {
-  name:'kick-cultivator',
-  sample:document.getElementById('SA-4'),
-  id:4
+  name: 'kick-cultivator',
+  sample: document.getElementById('SA-4'),
+  id: 4
 }
 const Sa5 = {
-  name:'kick-dry',
-  sample:document.getElementById('SA-5'),
-  id:5
+  name: 'kick-dry',
+  sample: document.getElementById('SA-5'),
+  id: 5
 }
 const Sa6 = {
-  name:'kick-electro',
-  sample:document.getElementById('SA-6'),
-  id:6
+  name: 'kick-electro',
+  sample: document.getElementById('SA-6'),
+  id: 6
 }
 const Sa7 = {
-  name:'openhat-808',
-  sample:document.getElementById('SA-7'),
-  id:7
+  name: 'openhat-808',
+  sample: document.getElementById('SA-7'),
+  id: 7
 }
 const Sa8 = {
-  name:'openhat-acoustic',
-  sample:document.getElementById('SA-8'),
-  id:8
+  name: 'openhat-acoustic',
+  sample: document.getElementById('SA-8'),
+  id: 8
 }
-const Sa9 ={
-  name:'openhat-tight',
-  sample:document.getElementById('SA-9'),
-  id:9
+const Sa9 = {
+  name: 'openhat-tight',
+  sample: document.getElementById('SA-9'),
+  id: 9
 }
-let sampleSel= document.getElementById('sampleSel')
-let sampleArr = [Sa1,Sa2,Sa3,Sa4,Sa5,Sa6,Sa7,Sa7,Sa8];
+
+let sampleSel = document.getElementById('sampleSel')
+let sampleArr = [Sa1, Sa2, Sa3, Sa4, Sa5, Sa6, Sa7, Sa7, Sa8];
 //create the options inside the selector
-let newOpt=''
+let newOpt = ''
 sampleArr.forEach((item, index) => {
-  document.getElementById('sampleSel').innerHTML+= `<option>${item.name}</option>`;
+  document.getElementById('sampleSel').innerHTML += `<option>${item.name}</option>`;
 
 })
 
@@ -131,7 +132,7 @@ function drum(e) {
     console.log('C!');
     C.style.backgroundColor = '#f8d241';
     Sa9.sample.play();
-    
+
   }
 
 
@@ -192,7 +193,7 @@ C.addEventListener('click', addSequence);
 
 function addSequence(e) {
   if (sequencer.length < 8) {
-    console.log(e.target.id)
+    console.log(e, 'tid')
     sequencer.push(e.target.id);
     console.log(sequencer.length);
     sequencerArr[sequencer.length - 1].style.backgroundColor = '#3298DC';
