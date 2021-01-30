@@ -61,10 +61,10 @@
       </div>
       <!--SELECTOR-->
        <div class="selector is-flex mt-2 "> 
-        <div class="field is-flex mr-5">
+        <div class="field is-flex mr-4">
           <div class="control">
             <div class="select is-small">
-              <select>
+              <select id='padSelect'>
                 <option>-</option>
                 <option>q</option>
                 <option>w</option>
@@ -79,14 +79,15 @@
             </div>
           </div>
           <div class="control">
-            <div class="select is-small ml-4">
+            <div class="select is-small ml-3">
               <select id='sampleSel'>
                 <option>Select Sample</option>
-              
+                
               </select>
             </div>
+            <button id='btn-sample-select' class="button is-small mr-2">S</button>
           </div>
-          <form class="mt-1 ml-5">
+          <form class="mt-1 ml-2">
             <label for="tempo">Tempo:</label>
             <input type="range" id="tempo" name="vol" min="0"step = '25' max="50">
             

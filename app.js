@@ -69,20 +69,45 @@ const Sa8 = {
   sample: document.getElementById('SA-8'),
   id: 8
 }
-const Sa9 = {
-  name: 'openhat-tight',
+const openhat_tight = {
+  name: 'openhat_tight',
   sample: document.getElementById('SA-9'),
   id: 9
 }
 
 let sampleSel = document.getElementById('sampleSel')
-let sampleArr = [Sa1, Sa2, Sa3, Sa4, Sa5, Sa6, Sa7, Sa7, Sa8];
+let sampleArr = [Sa1, Sa2, Sa3, Sa4, Sa5, Sa6, Sa7, Sa7, Sa8,openhat_tight];
 //create the options inside the selector
 let newOpt = ''
 sampleArr.forEach((item, index) => {
-  document.getElementById('sampleSel').innerHTML += `<option>${item.name}</option>`;
+ sampleSel.innerHTML += `<option>${item.name}</option>`;
 
 })
+//PAD SAMPLE SELECTOR
+
+const padSel = document.getElementById('padSelect');
+const btnSampleSel = document.getElementById('btn-sample-select');
+
+btnSampleSel.addEventListener('click', selectSample);
+
+function selectSample(){
+ return (padSel.value).sample = (sampleSel.value).sample;
+  // (padSel.value).sample.push((sampleSel.value).sample);
+}
+
+let q = {
+  id:1,
+//  i tried:
+//   - to create the new property with selectSample function
+//and declared the empty property both us 'undefined' and ''
+sample: ''
+
+
+}
+
+
+
+
 
 
 //sequencer arrays
@@ -98,7 +123,8 @@ function drum(e) {
   if (e.code === 'KeyQ') {
     console.log('Q!');
     Q.style.backgroundColor = '#f8d241';
-    Sa1.sample.play();
+    // q.sample[0].play();
+    q.sample.play();
   } else if
     (e.code === 'KeyW') {
     console.log('W!');
