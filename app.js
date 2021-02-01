@@ -23,7 +23,7 @@ const N8 = document.querySelector('#N8');
 
 //BUTTONS
 const canc = document.getElementById('canc');
-const play = document.getElementById['play'];
+const play = document.getElementById('play');
 const pause = document.getElementById('pause');
 
 //SAMPLES 
