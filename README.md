@@ -19,7 +19,9 @@ PS-900 Drum machine is a quick project did in my spare-time for exercise with DO
 * Modify single steps
 
 #### Technologies:
-* React
+* Html
+* Css
+* Javascript
 * Bulma
 
 ### Credit:
